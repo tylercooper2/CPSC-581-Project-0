@@ -1,0 +1,114 @@
+﻿<Window x:Class="Project_0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_0"
+        mc:Ignorable="d"
+        Title="" Height="350" Width="525">
+    <Window.Resources>
+        <Storyboard x:Key="SteakMove">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Steak1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-73.333"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Steak1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-2.667"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="SteakDone">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Steak1">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="-194.766"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Steak2">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="-194.766"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Steak3">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="-194.766"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Steak4">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="-194.766"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Steak1">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="2.644"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Steak2">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="2.644"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Steak3">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="2.644"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Steak4">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="2.644"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="ContainerGrid">
+            <BeginStoryboard x:Name="SteakDone_BeginStoryboard" Storyboard="{StaticResource SteakDone}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource SteakMove}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid x:Name="MainGrid" Background="#FF043A66" MouseDown="onClick">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="ContainerGrid" Margin="91,88.319,85,20.242" Grid.Row="1">
+            <Ellipse HorizontalAlignment="Left" Height="210" VerticalAlignment="Top" Width="341" Fill="#4CFFF86B"/>
+            <Ellipse Fill="#4CFFF86B" HorizontalAlignment="Left" Height="171.879" Margin="25.939,21.151,0,0" VerticalAlignment="Top" Width="277.364"/>
+            <Image x:Name="RedFire1" HorizontalAlignment="Left" Height="125.333" Margin="112.728,38.361,0,0" VerticalAlignment="Top" Width="123.333" Source="RedFire1.png" OpacityMask="Black"/>
+            <Path x:Name="RedFire2" Data="M190.33333,37.575333 C202.17083,16.210094 212.01115,-5.780293 223,-27.758 223,-14.22786 221.39587,5.7545675 228.33333,18.242 231.35744,23.685386 233.89334,28.008644 239.66667,13.575333 242.9001,5.491755 242.41359,-3.0703626 247.66667,-10.424667 248.80858,-8.1408337 256.99482,25.611627 261,-2.4246667 262.53488,-13.16884 259.95529,-23.698382 267,-33.091333 273.86432,-22.794858 274.27889,-10.422004 279,0.90866667 281.37838,6.6167862 295,15.87277&#xA;295,-11.091333 295,-8.6569691 294.20149,9.1723594 302.33333,-7.0913333 305.07565,-12.575961 307.55763,-18.206594 310.33333,-23.758 315.2057,-33.502735 321.75001,-42.591354 326.33333,-51.758 330.19852,-59.488372 336.33333,-72.606813 336.33333,-38.424667 336.33333,-23.029417 331.66667,-10.02909 331.66667,4.9086667 339.84782,4.9086667 338.87438,1.9136495 340.33333,-9.758 341.46092,-18.778662 345.66667,-28.077678 345.66667,-37.091333 346.64036,-34.657107&#xA;342.81799,21.272677 355.66667,-4.4246667 360.50042,-14.092167 369,-29.612843 369,-39.758 369.7446,-36.779605 368.9548,-17.746699 377,-19.758 381.94987,-20.995467 382.31758,-39.72649 385,-45.091333 385,-23.368343 391,-4.4893009 391,16.908667 391,22.449604 393.34018,48.242 382.33333,48.242 368.55556,48.242 354.77778,48.242 341,48.242 305.66667,48.242 270.33333,48.242 235,48.242&#xA;222.67356,48.242 209.60803,50.320484 197.66667,46.908667 187.87072,44.109824 188.57355,39.826258 188.33333,27.575333" Fill="#FFFF0606" HorizontalAlignment="Left" Height="110.678" Margin="58.333,60.524,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="203.875" Visibility="Hidden"/>
+            <Image x:Name="YellowFire1" HorizontalAlignment="Left" Height="83.333" Margin="126.668,74.276,0,0" VerticalAlignment="Top" Width="86" Source="YellowFire1.png"/>
+            <Path x:Name="YellowFire2" Data="M3.0906667,96.73 C15.520625,81.580988 16.865481,65.847038 25.090667,49.396667 25.090667,54.683776 24.215857,58.910999 26.424,64.063333 28.619843,69.186967 29.873596,71.512929 33.757333,75.396667 35.928048,77.567382 37.757737,79.813788 39.757333,82.063333 42.843419,85.535179 43.236738,79.104523 47.090667,71.396667 48.020876,69.536248 56.355973,43.472468 58.424,44.063333 65.434644,46.066374 63.423201,65.396667 72.424,65.396667 72.424,62.471644 78.867681,17.116789&#xA;88.424,43.396667 91.283847,51.261247 91.712654,78.582244 108.424,50.73 110.20852,53.406781 109.40064,58.854219 114.424,50.063333 118.36166,43.172423 123.05874,36.783217 127.09067,30.063333 131.84285,22.143022 134.64663,14.951416 138.424,7.3966667 138.424,17.936994 137.70083,28.447507 139.75733,38.73 141.65334,48.210016 138.77428,59.080276 147.09067,67.396667 149.42028,69.726279 157.43804,49.030574 160.424,42.063333 164.56251,32.40681&#xA;169.02671,25.460626 176.424,18.063333 176.424,24.381052 169.42901,64.166087 191.09067,28.063333 191.09067,50.359354 206.57814,82.447417 194.424,104.73 185.98224,120.20656 187.9557,110.06333 167.75733,110.06333 155.48489,110.06333 143.22361,109.39667 131.09067,109.39667 97.607755,109.39667 60.703547,101.97015 28.424,112.73 20.553993,115.35334 8.458284,115.08476 0.424,110.06333 -6.6018107,105.6722 -0.9776536,100.09796 7.7573333,90.73&#xA;" Fill="#FFFFE806" HorizontalAlignment="Left" Height="107.974" Margin="58.333,74.276,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="202.827" Visibility="Hidden"/>
+            <Image HorizontalAlignment="Left" Height="133.333" Margin="82.214,137.034,0,-60.367" VerticalAlignment="Top" Width="147.333" Source="cowboyhat.png"/>
+        </Grid>
+        <Ellipse x:Name="HellaGoodMoon" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="88.758" Stroke="Black" VerticalAlignment="Top" Width="91" Grid.RowSpan="2"/>
+        <Image x:Name="Left_Stake" HorizontalAlignment="Left" Height="186" Margin="74,93.319,0,0" VerticalAlignment="Top" Width="52.667" Source="spitroast.png" Grid.Row="1"/>
+        <Image x:Name="Right_Stake" HorizontalAlignment="Left" Height="186" Margin="398,93.319,0,0" VerticalAlignment="Top" Width="52.667" Source="spitroast.png" Grid.Row="1"/>
+        <Path x:Name="Skewer" Data="M86,112.33333 L416.66667,114.33333" Fill="#FFD18808" HorizontalAlignment="Left" Height="3" Margin="86,113.895,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="331.667" StrokeThickness="10" Grid.Row="1"/>
+        <Path x:Name="Steak1" Data="M180.84848,85.121212 C171.02432,85.010828 165.21604,83.485828 156.60606,81.333333 143.26106,77.997083 141.3838,77.67663 136.15152,59.363636 134.71607,54.33958 134.63636,50.268254 134.63636,44.969697 134.63636,41.035122 133.43068,36.748391 139.93939,35.121212 150.16408,32.56504 153.19751,33.985385 161.90909,42.69697 170.84412,51.631998 171.78991,56.662628 185.39394,58.606061 194.65928,59.92968 206.65264,56.71789 213.42424,65.424242 219.49332,73.227347 216.72836,76.696606&#xA;200.54545,82.090909 192.68604,84.710713 183.86475,83.798247 175.54545,84.363636" Fill="#FFFF8E8E" HorizontalAlignment="Left" Height="52.14" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="82.839" RenderTransformOrigin="0.5,0.5" Margin="204.214,88.319,0,0" Grid.Row="1">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path x:Name="Steak2" Data="M16.563958,1.7463951 C6.3863043,3.8047971 -6.622391,2.6030932 3.8972917,25.746395 C7.257457,33.138759 12.073754,40.589524 17.897292,46.413062 C34.803261,63.319032 51.503174,50.091885 76.563958,45.079728 C82.520816,43.888357 93.104373,39.305885 75.897292,29.746395 C67.107749,24.863316 55.256842,28.823549 45.897292,25.079728 C25.436037,16.895227 32.432075,-9.7381772 4.5639584,3.7463951" Fill="#FFC97C6B" HorizontalAlignment="Left" Height="55.747" Margin="200.771,84.712,0,0" Stroke="Black" VerticalAlignment="Top" Width="86.282" Visibility="Hidden" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path x:Name="Steak3" Data="M4.6749599,32.129479 C4.2718947,22.254383 0.84824389,14.035603 0.008293213,4.7961456 C-0.37795177,0.54745078 12.811384,-3.7340974 22.008293,5.4628123 C29.145022,12.599541 31.392169,16.374165 41.341627,20.796146 C50.235515,24.748985 59.960647,23.002486 69.341627,26.129479 C72.738544,27.261785 90.988907,36.691497 72.67496,42.796146 C64.12489,45.646169 53.313288,46.636564 44.67496,48.796146 C35.297826,51.140429 26.797165,47.678852 18.008293,42.796146 C7.6991038,37.068818 7.4945165,38.049926 2.6749599,24.796146" Fill="#FF955344" HorizontalAlignment="Left" Height="50.547" Margin="203.992,90.45,0,0" Stroke="Black" VerticalAlignment="Top" Width="81.71" Visibility="Hidden" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path x:Name="Steak4" Data="M4.6749599,32.129479 C4.2718947,22.254383 0.84824389,14.035603 0.008293213,4.7961456 C-0.37795177,0.54745078 12.811384,-3.7340974 22.008293,5.4628123 C29.145022,12.599541 31.392169,16.374165 41.341627,20.796146 C50.235515,24.748985 59.960647,23.002486 69.341627,26.129479 C72.738544,27.261785 90.988907,36.691497 72.67496,42.796146 C64.12489,45.646169 53.313288,46.636564 44.67496,48.796146 C35.297826,51.140429 26.797165,47.678852 18.008293,42.796146 C7.6991038,37.068818 7.4945165,38.049926 2.6749599,24.796146" Fill="#FF2B1510" HorizontalAlignment="Left" Height="50.547" Margin="203.992,90.45,0,0" Stroke="Black" VerticalAlignment="Top" Width="81.71" Visibility="Hidden" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </Grid>
+</Window>
