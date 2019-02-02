@@ -89,11 +89,291 @@
             <BeginStoryboard x:Name="ResetSteak_BeginStoryboard" Storyboard="{StaticResource ResetSteak}"/>
         </EventTrigger>
     </Window.Triggers>
-    <Grid x:Name="MainGrid" Background="#FD041C2E" MouseDown="onClick">
+    <Grid x:Name="MainGrid" Background="#FD041C2E" MouseDown="onClick" Height="319" VerticalAlignment="Bottom">
         <Grid.RowDefinitions>
             <RowDefinition Height="0*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Grid x:Name="skypattern" Margin="0,10,402,0" Grid.RowSpan="2" Height="73" VerticalAlignment="Top" HorizontalAlignment="Right" Width="167">
+            <Rectangle x:Name="star" Margin="29,25,129,40" Fill="#FFF9F9CA" Width="3" Height="3" OpacityMask="#FFF9F9CA" Stroke="#FFF9F9CA" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star2" Margin="87,13,76,56" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star3" Margin="135,49,28,20" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star4" Margin="61,66,102,3" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star5" Margin="4,0,159,69" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star6" Margin="156,36,7,33" Fill="#FFF9F9CA" Width="2" Height="2" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+        </Grid>
+        <Grid x:Name="skypattern2" RenderTransformOrigin="0.5,0.5" Margin="0,0,605,236" Grid.RowSpan="2" HorizontalAlignment="Right" Width="167" Height="73" VerticalAlignment="Bottom">
+            <Rectangle x:Name="star11" Margin="29,25,129,40" Fill="#FFF9F9CA" Width="3" Height="3" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star22" Margin="87,13,76,56" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star33" Margin="135,49,28,20" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star44" Margin="61,66,102,3" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star55" Margin="4,0,159,69" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star66" Margin="156,36,7,33" Fill="#FFF9F9CA" Width="2" Height="2" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-179.448"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+        </Grid>
+        <Grid x:Name="skypattern3" RenderTransformOrigin="0.5,0.5" Margin="431,0,0,236" Grid.RowSpan="2" Height="73" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="167">
+            <Rectangle x:Name="star111" Margin="29,25,129,40" Fill="#FFF9F9CA" Width="3" Height="3" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star222" Margin="87,13,76,56" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star333" Margin="135,49,28,20" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star444" Margin="61,66,102,3" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star555" Margin="4,0,159,69" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star666" Margin="156,36,7,33" Fill="#FFF9F9CA" Width="2" Height="2" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.386"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+        </Grid>
+        <Grid x:Name="skypattern4" RenderTransformOrigin="0.5,0.5" Margin="615,10,0,0" Grid.RowSpan="2" Height="73" VerticalAlignment="Top" HorizontalAlignment="Left" Width="167">
+            <Rectangle x:Name="star1111" Margin="29,25,129,40" Fill="#FFF9F9CA" Width="3" Height="3" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star2222" Margin="87,13,76,56" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star3333" Margin="135,49,28,20" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star4444" Margin="61,66,102,3" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star5555" Margin="4,0,159,69" Fill="#FFF9F9CA" Width="4" Height="4" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="star6666" Margin="156,36,7,33" Fill="#FFF9F9CA" Width="2" Height="2" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-49.363"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="174.998"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+        </Grid>
         <Grid x:Name="Background" Margin="0,242.216,0,0" Grid.RowSpan="2">
             <Rectangle x:Name="Ground" Fill="#FF2B1510" HorizontalAlignment="Left" Height="76.784" Stroke="Black" VerticalAlignment="Top" Width="792"/>
             <Ellipse x:Name="StaticGlow1" HorizontalAlignment="Left" Height="257" VerticalAlignment="Top" Width="645" Fill="#0EFFF86B" Margin="111,-180.216,0,0"/>
@@ -155,6 +435,7 @@
                 </Path.RenderTransform>
             </Path>
         </Grid>
+
         <Grid x:Name="tent" Grid.RowSpan="2"  Margin="-88.575,66.417,512.617,-18.667">
             <Rectangle Fill="#FF4A5931" HorizontalAlignment="Left" Height="192.466" Margin="71.018,39.777,0,0" Stroke="Black" VerticalAlignment="Top" Width="217.114"/>
             <Rectangle Fill="#FF4A5931" HorizontalAlignment="Left" Height="55.667" Margin="77.018,196.916,0,0"  VerticalAlignment="Top" Width="151.263"/>
@@ -164,9 +445,22 @@
                 </Polygon.RenderTransform>
             </Polygon>
             <Line X1="100" Y1="0" X2="100" Y2="200" StrokeThickness="2" Stroke="Black" Margin="187.018,39.777,-187.018,-39.777"/>
+
         </Grid>
+
         <Ellipse x:Name="HellaGoodMoon" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Grid.RowSpan="2" Margin="732,10,0,0"/>
         <Rectangle x:Name="tint" Fill="#3F29243E" HorizontalAlignment="Left" Height="473.784" Stroke="Black" VerticalAlignment="Top" Width="1001" Margin="-52,-103,-157,-51.784" Grid.RowSpan="2" Visibility="Hidden"/>
+       
+        <TextBox x:Name="CannondaleSticker" Text="cannondale" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Height="34" Margin="17,129,658,156" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5" Width="117" FontWeight="Bold" Background="#FF5D6C44" BorderBrush="#FF704C4C" >
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-6.625"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
         <TextBlock x:Name="ResponseText" HorizontalAlignment="Left" Height="50" Margin="20,41,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" Foreground="White"/>
         <Grid x:Name="ResetGrid" HorizontalAlignment="Left" Height="319" Margin="-1,1,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="793" Visibility="Hidden">
             <Rectangle x:Name="ResetRectangle" Fill="#00F4F4F5" HorizontalAlignment="Left" Height="319" Stroke="Black" VerticalAlignment="Top" Width="793"/>
