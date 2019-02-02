@@ -12,10 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Timers;
-using System.Diagnostics;
-using System.IO;
-
+using System.Timers; 
 
 namespace Project_0
 {
@@ -35,28 +32,17 @@ namespace Project_0
         private  bool fireColor = true;
         private  bool fireNumber = true;
         private int time = 0;
-        private bool finishedCooking = false;
-        private bool steak1here = true;
-        private bool steak2here = false;
-        private bool steak3here = false;
-        private bool steak4here = false;
-        private bool soundPlaying = true;
+        private bool finishedCooking = false; 
 
         public MainWindow()
         {
-           
             InitializeComponent();
 
             SetTimer();
 
-            PlayMusic();
-
-           
 
         }
 
-
-        
         public void SetTimer()
         {
             fireTimer = new System.Timers.Timer(500);
@@ -71,9 +57,10 @@ namespace Project_0
             steakTimer.AutoReset = true;
             steakTimer.Enabled = true;
 
+            
+
         }
 
-        
 
         private void StartCooking(Object source, ElapsedEventArgs e)
         {
@@ -88,11 +75,6 @@ namespace Project_0
                     this.Steak2.Visibility = Visibility.Visible;
 
                 });
-
-                steak1here = false;
-                steak2here = true;
-                steak3here = false;
-                steak4here = false;
             }
 
             else if (time == 2)
@@ -103,12 +85,6 @@ namespace Project_0
                     this.Steak3.Visibility = Visibility.Visible;
 
                 });
-
-                steak1here = false;
-                steak2here = false;
-                steak3here = true;
-                steak4here = false;
-
             }
 
             else if (time == 3)
@@ -119,14 +95,7 @@ namespace Project_0
                     this.Steak4.Visibility = Visibility.Visible;
 
                 });
-
-                steak1here = false;
-                steak2here = false;
-                steak3here = false;
-                steak4here = true;
             }
-
-            
 
 
         }
@@ -208,69 +177,97 @@ namespace Project_0
 
         }
 
-        public void PlayMusic()
+        private void DoneCooking(Object source, ElapsedEventArgs e)
         {
-            //Plays Monster Hunter spitroast music
-            MediaPlayer Music = new MediaPlayer();
-            Music.Open(new Uri(@"C:\Users\Fran\Desktop\CPSC581\P0\CPSC-581-Project-0\Project 0\monsterhuntermusic.mp3"));
-            Music.Play();
+            //Display a message based on how well the steak is cooked 
+            //Called when the steak reaches the tent after it has been cooked
 
-            if (soundPlaying)
+            //Maybe change the responses to things Jordan would say? 
+            if(this.time == 0)
             {
-                soundPlaying = false;
-                Task.Factory.StartNew(() => {
-                    PlayMusic();
-                    soundPlaying = true; });
-            }
-            
-        }
+                this.Dispatcher.Invoke(() =>
+                {
 
-        
+                    this.ResponseText.Text = "Ew, its raw!";
+                });
+            }
+            else if(this.time == 1)
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+
+                    this.ResponseText.Text = "Ahhh perfect!";
+                });
+            }
+            else if(this.time == 2)
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+
+                    this.ResponseText.Text = "Hmm, a little overcooked, but still ok!";
+                });
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+
+                    this.ResponseText.Text = "Ahh its brunt!";
+                });
+            }
+
+            
+
+            waitTimer.Stop();
+        }
 
         private void onClick(object sender, MouseButtonEventArgs e)
         {
-
-            //Reset steak on click 
-            //steakTimer.Stop();
-            // this.time = 0;
-
-            if (steak1here == true)
+            
+            //If the steak is finished cooking 
+            if(!finishedCooking)
             {
-                Debug.WriteLine("steak1");
-                
-            }
+                //Stop the timer from cooking the steak
+                steakTimer.Stop();
 
-            else if (steak2here == true)
-            {
-                Debug.WriteLine("steak2");
+                //Create a new timer to wait until the steak reaches the tent
+                //When the steak reaches the tent, text will appear 
+                waitTimer = new System.Timers.Timer(2700);
 
-                
-            }
-            else if (steak3here == true)
-            {
-                Debug.WriteLine("steak3");
+                waitTimer.Elapsed += DoneCooking;
+                waitTimer.AutoReset = true;
+                waitTimer.Enabled = true;
 
+                finishedCooking = true;
 
-            }
-            else if (steak4here == true)
-            {
-                Debug.WriteLine("steak4");
-
+                //Make the reset grid visible which will reset the steak when clicked on 
+                this.ResetGrid.Visibility = Visibility.Visible;
 
             }
 
-            /*
+            //If the steak has been eaten in the tent, reset the steak
+            else
+            {
                 finishedCooking = false;
 
                 this.Steak1.Visibility = Visibility.Visible;
                 this.Steak2.Visibility = Visibility.Hidden;
                 this.Steak3.Visibility = Visibility.Hidden;
                 this.Steak4.Visibility = Visibility.Hidden;
+
+                //Reset the text
+                this.ResponseText.Text = ""; 
+
+                //Reset the timer 
+                this.time = 0;
+                steakTimer.Start();
+
+                //Hide the reset grid 
+                this.ResetGrid.Visibility = Visibility.Hidden;
+
+
+            }
             
-    
-            */
-
-
 
         }
 
