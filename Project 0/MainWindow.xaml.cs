@@ -28,11 +28,16 @@ namespace Project_0
 
         private static System.Timers.Timer fireTimer;
         private static System.Timers.Timer steakTimer;
-        private static System.Timers.Timer waitTimer; 
+        private static System.Timers.Timer waitTimer;
+        private static System.Timers.Timer animationWaitTimer;
+
         private  bool fireColor = true;
         private  bool fireNumber = true;
         private int time = 0;
-        private bool finishedCooking = false; 
+        private bool finishedCooking = false;
+
+        private bool clickable = false; 
+
 
         public MainWindow()
         {
@@ -40,7 +45,8 @@ namespace Project_0
 
             SetTimer();
 
-
+            this.ClickRectangle.Visibility = Visibility.Hidden;
+            
         }
 
         public void SetTimer()
@@ -57,10 +63,45 @@ namespace Project_0
             steakTimer.AutoReset = true;
             steakTimer.Enabled = true;
 
-            
+
+            //Timer used to wait for animations to finish so that the grids cannot be clicked on 
+            animationWaitTimer = new System.Timers.Timer(1000);
+
+            animationWaitTimer.Elapsed += AnimationWait1;
+            animationWaitTimer.AutoReset = true;
+            animationWaitTimer.Enabled = true;
+
+
+
 
         }
 
+        //Make the click rectangle visible 
+        private void AnimationWait1(Object source, ElapsedEventArgs e)
+        {
+
+            this.Dispatcher.Invoke(() =>
+            {
+                this.ClickRectangle.Visibility = Visibility.Visible; 
+            });
+
+            clickable = true;
+            animationWaitTimer.Stop();
+        }
+
+        //Make the click rectangle and the reset grid visible 
+        private void AnimationWait2(Object source, ElapsedEventArgs e)
+        {
+
+            this.Dispatcher.Invoke(() =>
+            {
+                this.ClickRectangle.Visibility = Visibility.Visible;
+                this.ResetGrid.Visibility = Visibility.Visible;
+
+            });
+            clickable = true; 
+            animationWaitTimer.Stop(); 
+        }
 
         private void StartCooking(Object source, ElapsedEventArgs e)
         {
@@ -223,52 +264,77 @@ namespace Project_0
 
         private void onClick(object sender, MouseButtonEventArgs e)
         {
-            
-            //If the steak is finished cooking 
-            if(!finishedCooking)
+
+            //If no animation is currently happening 
+            //If an amination is happening, do nothing until after the animation is finished 
+            if (clickable)
             {
-                //Stop the timer from cooking the steak
-                steakTimer.Stop();
+                clickable = false; 
 
-                //Create a new timer to wait until the steak reaches the tent
-                //When the steak reaches the tent, text will appear 
-                waitTimer = new System.Timers.Timer(2700);
+                //If the steak is finished cooking 
+                if (!finishedCooking)
+                {
+                    //Stop the timer from cooking the steak
+                    steakTimer.Stop();
+                    //Hide the click rectangle so it does not interfere with the animations 
+                    ClickRectangle.Visibility = Visibility.Hidden;
 
-                waitTimer.Elapsed += DoneCooking;
-                waitTimer.AutoReset = true;
-                waitTimer.Enabled = true;
+                    //Create a new timer to wait for the steak to tent animation to finish
+                    //Once the animation is finished, the grids will be clickable again 
+                    animationWaitTimer = new System.Timers.Timer(2500);
 
-                finishedCooking = true;
+                    animationWaitTimer.Elapsed += AnimationWait2;
+                    animationWaitTimer.AutoReset = true;
+                    animationWaitTimer.Enabled = true;
 
-                //Make the reset grid visible which will reset the steak when clicked on 
-                this.ResetGrid.Visibility = Visibility.Visible;
 
+                    //Create a new timer to wait until the steak reaches the tent
+                    //When the steak reaches the tent, text will appear 
+                    waitTimer = new System.Timers.Timer(2700);
+
+                    waitTimer.Elapsed += DoneCooking;
+                    waitTimer.AutoReset = true;
+                    waitTimer.Enabled = true;
+
+                    finishedCooking = true;
+
+                }
+
+                //If the steak has been eaten in the tent, reset the steak
+                else
+                {
+                    finishedCooking = false;
+
+                    //Reset the text
+                    this.ResponseText.Text = "";
+
+                    //Hide the clickable grids so they cannot be clicked on during the animations 
+                    this.ClickRectangle.Visibility = Visibility.Hidden;
+                    this.ResetGrid.Visibility = Visibility.Hidden;
+
+                    //Reset the color of the steaks 
+                    this.Steak1.Visibility = Visibility.Visible;
+                    this.Steak2.Visibility = Visibility.Hidden;
+                    this.Steak3.Visibility = Visibility.Hidden;
+                    this.Steak4.Visibility = Visibility.Hidden;
+
+                    //Initialize the animation wait timer to 1.5 seconds to wait for the reset steak animation to finish
+                    animationWaitTimer = new System.Timers.Timer(1500);
+
+                    //Make the click rectangle visible after the animation is finished
+                    animationWaitTimer.Elapsed += AnimationWait1;
+                    animationWaitTimer.AutoReset = true;
+                    animationWaitTimer.Enabled = true;
+
+
+                    //Reset the timer 
+                    this.time = 0;
+                    steakTimer.Start();
+
+                }
             }
 
-            //If the steak has been eaten in the tent, reset the steak
-            else
-            {
-                finishedCooking = false;
-
-                this.Steak1.Visibility = Visibility.Visible;
-                this.Steak2.Visibility = Visibility.Hidden;
-                this.Steak3.Visibility = Visibility.Hidden;
-                this.Steak4.Visibility = Visibility.Hidden;
-
-                //Reset the text
-                this.ResponseText.Text = ""; 
-
-                //Reset the timer 
-                this.time = 0;
-                steakTimer.Start();
-
-                //Hide the reset grid 
-                this.ResetGrid.Visibility = Visibility.Hidden;
-
-
-            }
             
-
         }
 
         

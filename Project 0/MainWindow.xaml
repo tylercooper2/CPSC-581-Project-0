@@ -79,7 +79,7 @@
         </Storyboard>
     </Window.Resources>
     <Window.Triggers>
-        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="CampFire">
+        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="ClickRectangle">
             <BeginStoryboard x:Name="SteakDone_BeginStoryboard" Storyboard="{StaticResource SteakDone}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
@@ -168,6 +168,7 @@
         <Ellipse x:Name="HellaGoodMoon" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Grid.RowSpan="2" Margin="732,10,0,0"/>
         <Rectangle x:Name="tint" Fill="#3F29243E" HorizontalAlignment="Left" Height="473.784" Stroke="Black" VerticalAlignment="Top" Width="1001" Margin="-52,-103,-157,-51.784" Grid.RowSpan="2" Visibility="Hidden"/>
         <TextBlock x:Name="ResponseText" HorizontalAlignment="Left" Height="50" Margin="20,41,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" Foreground="White"/>
+        <Rectangle x:Name="ClickRectangle" Fill="#00F4F4F5" HorizontalAlignment="Left" Height="318" Margin="-1,2,0,0" Grid.RowSpan="2" Stroke="Black" VerticalAlignment="Top" Width="793"/>
         <Grid x:Name="ResetGrid" HorizontalAlignment="Left" Height="319" Margin="-1,1,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="793" Visibility="Hidden">
             <Rectangle x:Name="ResetRectangle" Fill="#00F4F4F5" HorizontalAlignment="Left" Height="319" Stroke="Black" VerticalAlignment="Top" Width="793"/>
         </Grid>
