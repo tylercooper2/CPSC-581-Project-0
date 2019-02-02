@@ -17,6 +17,7 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
+
         <Storyboard x:Key="SteakDone">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Steak1">
                 <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="-194.766"/>
@@ -51,8 +52,10 @@
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard Storyboard="{StaticResource SteakMove}"/>
         </EventTrigger>
+
     </Window.Triggers>
     <Grid x:Name="MainGrid" Background="#FD041C2E" MouseDown="onClick">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="0*"/>
             <RowDefinition/>
@@ -78,6 +81,7 @@
             <Image x:Name="Right_Stake" HorizontalAlignment="Left" Height="186" Margin="324,8.607,0,0" VerticalAlignment="Top" Width="52.667" Source="spitroast.png"/>
             <Path x:Name="Skewer" Data="M86,112.33333 L416.66667,114.33333" Fill="#FFD18808" HorizontalAlignment="Left" Height="3" Margin="12,29.183,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="331.667" StrokeThickness="10"/>
             <Path x:Name="Steak1" Data="M180.84848,85.121212 C171.02432,85.010828 165.21604,83.485828 156.60606,81.333333 143.26106,77.997083 141.3838,77.67663 136.15152,59.363636 134.71607,54.33958 134.63636,50.268254 134.63636,44.969697 134.63636,41.035122 133.43068,36.748391 139.93939,35.121212 150.16408,32.56504 153.19751,33.985385 161.90909,42.69697 170.84412,51.631998 171.78991,56.662628 185.39394,58.606061 194.65928,59.92968 206.65264,56.71789 213.42424,65.424242 219.49332,73.227347 216.72836,76.696606&#xA;200.54545,82.090909 192.68604,84.710713 183.86475,83.798247 175.54545,84.363636" Fill="#FFFF8E8E" HorizontalAlignment="Left" Height="52.14" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="82.839" RenderTransformOrigin="0.5,0.5" Margin="130.214,3.607,0,0">
+
                 <Path.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -87,7 +91,7 @@
                     </TransformGroup>
                 </Path.RenderTransform>
             </Path>
-            <Path x:Name="Steak2" Data="M16.563958,1.7463951 C6.3863043,3.8047971 -6.622391,2.6030932 3.8972917,25.746395 C7.257457,33.138759 12.073754,40.589524 17.897292,46.413062 C34.803261,63.319032 51.503174,50.091885 76.563958,45.079728 C82.520816,43.888357 93.104373,39.305885 75.897292,29.746395 C67.107749,24.863316 55.256842,28.823549 45.897292,25.079728 C25.436037,16.895227 32.432075,-9.7381772 4.5639584,3.7463951" Fill="#FFC97C6B" HorizontalAlignment="Left" Height="55.747" Margin="126.771,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="86.282" Visibility="Hidden" RenderTransformOrigin="0.5,0.5">
+            <Path x:Name="Steak2" Data="M16.563958,1.7463951 C6.3863043,3.8047971 -6.622391,2.6030932 3.8972917,25.746395 C7.257457,33.138759 12.073754,40.589524 17.897292,46.413062 C34.803261,63.319032 51.503174,50.091885 76.563958,45.079728 C82.520816,43.888357 93.104373,39.305885 75.897292,29.746395 C67.107749,24.863316 55.256842,28.823549 45.897292,25.079728 C25.436037,16.895227 32.432075,-9.7381772 4.5639584,3.7463951" Fill="#FFC97C6B" HorizontalAlignment="Left" Height="55.747" Margin="126.771,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="86.282" Visibility="Hidden" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="onClick">
                 <Path.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -127,8 +131,19 @@
                 </Polygon.RenderTransform>
             </Polygon>
             <Line X1="100" Y1="0" X2="100" Y2="200" StrokeThickness="2" Stroke="Black" Margin="187.018,39.777,-187.018,-39.777"/>
+            <TextBox x:Name="CannonDaleText" Text="cannondale" HorizontalAlignment="Center" Height="34" FontSize="22" Margin="101,35,141.958,202.25" VerticalAlignment="Center" Width="125" RenderTransformOrigin="2.565,0.574" FontWeight="Bold" Background="#FFF0F0F0" BorderBrush="#FF1C7E24" BorderThickness="1" >
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-5.132"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
         </Grid>
+
         <Ellipse x:Name="HellaGoodMoon" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Grid.RowSpan="2" Margin="732,10,0,0"/>
-        <Rectangle x:Name="tint" Fill="#3F29243E" HorizontalAlignment="Left" Height="473.784" Stroke="Black" VerticalAlignment="Top" Width="1001" Margin="-52,-103,-157,-51.784" Grid.RowSpan="2"/>
+        <Rectangle x:Name="tint" Fill="#3F29243E" HorizontalAlignment="Left" Height="473" Stroke="Black" VerticalAlignment="Top" Width="1001" Margin="-54,-106,-155,-48" Grid.RowSpan="2"/>
     </Grid>
 </Window>

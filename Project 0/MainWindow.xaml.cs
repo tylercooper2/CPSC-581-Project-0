@@ -12,7 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Timers; 
+using System.Timers;
+using System.Diagnostics;
+using System.IO;
+
 
 namespace Project_0
 {
@@ -32,17 +35,28 @@ namespace Project_0
         private  bool fireColor = true;
         private  bool fireNumber = true;
         private int time = 0;
-        private bool finishedCooking = false; 
+        private bool finishedCooking = false;
+        private bool steak1here = true;
+        private bool steak2here = false;
+        private bool steak3here = false;
+        private bool steak4here = false;
+        private bool soundPlaying = true;
 
         public MainWindow()
         {
+           
             InitializeComponent();
 
             SetTimer();
 
+            PlayMusic();
+
+           
 
         }
 
+
+        
         public void SetTimer()
         {
             fireTimer = new System.Timers.Timer(500);
@@ -57,10 +71,9 @@ namespace Project_0
             steakTimer.AutoReset = true;
             steakTimer.Enabled = true;
 
-            
-
         }
 
+        
 
         private void StartCooking(Object source, ElapsedEventArgs e)
         {
@@ -75,6 +88,11 @@ namespace Project_0
                     this.Steak2.Visibility = Visibility.Visible;
 
                 });
+
+                steak1here = false;
+                steak2here = true;
+                steak3here = false;
+                steak4here = false;
             }
 
             else if (time == 2)
@@ -85,6 +103,12 @@ namespace Project_0
                     this.Steak3.Visibility = Visibility.Visible;
 
                 });
+
+                steak1here = false;
+                steak2here = false;
+                steak3here = true;
+                steak4here = false;
+
             }
 
             else if (time == 3)
@@ -95,7 +119,14 @@ namespace Project_0
                     this.Steak4.Visibility = Visibility.Visible;
 
                 });
+
+                steak1here = false;
+                steak2here = false;
+                steak3here = false;
+                steak4here = true;
             }
+
+            
 
 
         }
@@ -177,13 +208,57 @@ namespace Project_0
 
         }
 
+        public void PlayMusic()
+        {
+            //Plays Monster Hunter spitroast music
+            MediaPlayer Music = new MediaPlayer();
+            Music.Open(new Uri(@"C:\Users\Fran\Desktop\CPSC581\P0\CPSC-581-Project-0\Project 0\monsterhuntermusic.mp3"));
+            Music.Play();
+
+            if (soundPlaying)
+            {
+                soundPlaying = false;
+                Task.Factory.StartNew(() => {
+                    PlayMusic();
+                    soundPlaying = true; });
+            }
+            
+        }
+
+        
+
         private void onClick(object sender, MouseButtonEventArgs e)
         {
-            //Reset steak on click 
-            steakTimer.Stop();
-            this.time = 0;
 
-            
+            //Reset steak on click 
+            //steakTimer.Stop();
+            // this.time = 0;
+
+            if (steak1here == true)
+            {
+                Debug.WriteLine("steak1");
+                
+            }
+
+            else if (steak2here == true)
+            {
+                Debug.WriteLine("steak2");
+
+                
+            }
+            else if (steak3here == true)
+            {
+                Debug.WriteLine("steak3");
+
+
+            }
+            else if (steak4here == true)
+            {
+                Debug.WriteLine("steak4");
+
+
+            }
+
             /*
                 finishedCooking = false;
 
@@ -195,8 +270,10 @@ namespace Project_0
     
             */
 
-            
+
 
         }
+
+        
     }
 }
