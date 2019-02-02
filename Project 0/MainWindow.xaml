@@ -45,7 +45,7 @@
         </Storyboard>
     </Window.Resources>
     <Window.Triggers>
-        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="ContainerGrid">
+        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="CampFire">
             <BeginStoryboard x:Name="SteakDone_BeginStoryboard" Storyboard="{StaticResource SteakDone}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
@@ -57,15 +57,21 @@
             <RowDefinition Height="0*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Rectangle Fill="#FF2B1510" HorizontalAlignment="Left" Height="76.784" Margin="0,242.216,0,0" Grid.RowSpan="2" Stroke="Black" VerticalAlignment="Top" Width="792"/>
-        <Grid x:Name="ContainerGrid" Margin="393.724,98.027,-217.724,10.534" Grid.Row="1">
-            <Ellipse HorizontalAlignment="Left" Height="210" VerticalAlignment="Top" Width="341" Fill="#4CFFF86B"/>
-            <Ellipse Fill="#4CFFF86B" HorizontalAlignment="Left" Height="171.879" Margin="25.939,21.151,0,0" VerticalAlignment="Top" Width="277.364"/>
+        <Grid x:Name="Background" Margin="0,242.216,0,0" Grid.RowSpan="2">
+            <Rectangle x:Name="Ground" Fill="#FF2B1510" HorizontalAlignment="Left" Height="76.784" Stroke="Black" VerticalAlignment="Top" Width="792"/>
+            <Ellipse x:Name="StaticGlow1" HorizontalAlignment="Left" Height="257" VerticalAlignment="Top" Width="645" Fill="#0EFFF86B" Margin="111,-180.216,0,0"/>
+            <Ellipse x:Name="StaticGlow2" HorizontalAlignment="Left" Height="326" VerticalAlignment="Top" Width="506" Fill="#19FFF86B" Margin="328,-199.216,-42,-50"/>
+        </Grid>
+        <Grid x:Name="CampFire" Margin="393.724,98.027,-217.724,-69.466" Grid.Row="1">
+            <Ellipse x:Name="LargeGlow1" HorizontalAlignment="Left" Height="210" VerticalAlignment="Top" Width="341" Fill="#4CFFF86B"/>
+            <Ellipse x:Name="LargeGlow2" HorizontalAlignment="Left" Height="222" VerticalAlignment="Top" Width="341" Fill="#4CFFF86B" Margin="-50.697,-21.561,0,0" d:IsHidden="True" Visibility="Hidden"/>
+            <Ellipse x:Name="SmallGlow1" Fill="#4CFFF86B" HorizontalAlignment="Left" Height="171.879" Margin="25.939,21.151,0,0" VerticalAlignment="Top" Width="277.364"/>
+            <Ellipse x:Name="SmallGlow2" Fill="#4CFFF86B" HorizontalAlignment="Left" Height="126.089" Margin="99.728,52.151,0,0" VerticalAlignment="Top" Width="190.575" d:IsHidden="True" Visibility="Hidden"/>
             <Image x:Name="RedFire1" HorizontalAlignment="Left" Height="125.333" Margin="112.728,38.361,0,0" VerticalAlignment="Top" Width="123.333" Source="RedFire1.png" OpacityMask="Black"/>
-            <Path x:Name="RedFire2" Data="M190.33333,37.575333 C202.17083,16.210094 212.01115,-5.780293 223,-27.758 223,-14.22786 221.39587,5.7545675 228.33333,18.242 231.35744,23.685386 233.89334,28.008644 239.66667,13.575333 242.9001,5.491755 242.41359,-3.0703626 247.66667,-10.424667 248.80858,-8.1408337 256.99482,25.611627 261,-2.4246667 262.53488,-13.16884 259.95529,-23.698382 267,-33.091333 273.86432,-22.794858 274.27889,-10.422004 279,0.90866667 281.37838,6.6167862 295,15.87277&#xA;295,-11.091333 295,-8.6569691 294.20149,9.1723594 302.33333,-7.0913333 305.07565,-12.575961 307.55763,-18.206594 310.33333,-23.758 315.2057,-33.502735 321.75001,-42.591354 326.33333,-51.758 330.19852,-59.488372 336.33333,-72.606813 336.33333,-38.424667 336.33333,-23.029417 331.66667,-10.02909 331.66667,4.9086667 339.84782,4.9086667 338.87438,1.9136495 340.33333,-9.758 341.46092,-18.778662 345.66667,-28.077678 345.66667,-37.091333 346.64036,-34.657107&#xA;342.81799,21.272677 355.66667,-4.4246667 360.50042,-14.092167 369,-29.612843 369,-39.758 369.7446,-36.779605 368.9548,-17.746699 377,-19.758 381.94987,-20.995467 382.31758,-39.72649 385,-45.091333 385,-23.368343 391,-4.4893009 391,16.908667 391,22.449604 393.34018,48.242 382.33333,48.242 368.55556,48.242 354.77778,48.242 341,48.242 305.66667,48.242 270.33333,48.242 235,48.242&#xA;222.67356,48.242 209.60803,50.320484 197.66667,46.908667 187.87072,44.109824 188.57355,39.826258 188.33333,27.575333" Fill="#FFFF0606" HorizontalAlignment="Left" Height="110.678" Margin="58.333,60.524,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="203.875" Visibility="Hidden"/>
+            <Image x:Name="RedFire2" HorizontalAlignment="Left" Height="125.333" Margin="112.728,38.361,0,0" VerticalAlignment="Top" Width="123.333" Source="RedFire2.png" OpacityMask="Black" Visibility="Hidden"/>
             <Image HorizontalAlignment="Left" Height="133.333" Margin="40.681,107.026,0,-29.92" VerticalAlignment="Top" Width="147.333" Source="cowboyhat.png"/>
             <Image x:Name="YellowFire1" HorizontalAlignment="Left" Height="83.333" Margin="126.668,74.276,0,0" VerticalAlignment="Top" Width="86" Source="YellowFire1.png"/>
-            <Path x:Name="YellowFire2" Data="M3.0906667,96.73 C15.520625,81.580988 16.865481,65.847038 25.090667,49.396667 25.090667,54.683776 24.215857,58.910999 26.424,64.063333 28.619843,69.186967 29.873596,71.512929 33.757333,75.396667 35.928048,77.567382 37.757737,79.813788 39.757333,82.063333 42.843419,85.535179 43.236738,79.104523 47.090667,71.396667 48.020876,69.536248 56.355973,43.472468 58.424,44.063333 65.434644,46.066374 63.423201,65.396667 72.424,65.396667 72.424,62.471644 78.867681,17.116789&#xA;88.424,43.396667 91.283847,51.261247 91.712654,78.582244 108.424,50.73 110.20852,53.406781 109.40064,58.854219 114.424,50.063333 118.36166,43.172423 123.05874,36.783217 127.09067,30.063333 131.84285,22.143022 134.64663,14.951416 138.424,7.3966667 138.424,17.936994 137.70083,28.447507 139.75733,38.73 141.65334,48.210016 138.77428,59.080276 147.09067,67.396667 149.42028,69.726279 157.43804,49.030574 160.424,42.063333 164.56251,32.40681&#xA;169.02671,25.460626 176.424,18.063333 176.424,24.381052 169.42901,64.166087 191.09067,28.063333 191.09067,50.359354 206.57814,82.447417 194.424,104.73 185.98224,120.20656 187.9557,110.06333 167.75733,110.06333 155.48489,110.06333 143.22361,109.39667 131.09067,109.39667 97.607755,109.39667 60.703547,101.97015 28.424,112.73 20.553993,115.35334 8.458284,115.08476 0.424,110.06333 -6.6018107,105.6722 -0.9776536,100.09796 7.7573333,90.73&#xA;" Fill="#FFFFE806" HorizontalAlignment="Left" Height="107.974" Margin="58.333,74.276,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="202.827" Visibility="Hidden"/>
+            <Image x:Name="YellowFire2" HorizontalAlignment="Left" Height="83.333" Margin="126.668,74.276,0,0" VerticalAlignment="Top" Width="86" Source="YellowFire2.png" Visibility="Hidden" OpacityMask="Black"/>
         </Grid>
         <Grid x:Name="Grillset" Margin="376.724,94.42,38.609,29.973" Grid.RowSpan="2">
             <Image x:Name="Left_Stake" HorizontalAlignment="Left" Height="186" Margin="0,8.607,0,0" VerticalAlignment="Top" Width="52.667" Source="spitroast.png"/>
@@ -123,5 +129,6 @@
             <Line X1="100" Y1="0" X2="100" Y2="200" StrokeThickness="2" Stroke="Black" Margin="187.018,39.777,-187.018,-39.777"/>
         </Grid>
         <Ellipse x:Name="HellaGoodMoon" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Grid.RowSpan="2" Margin="732,10,0,0"/>
+        <Rectangle x:Name="tint" Fill="#3F29243E" HorizontalAlignment="Left" Height="473.784" Stroke="Black" VerticalAlignment="Top" Width="1001" Margin="-52,-103,-157,-51.784" Grid.RowSpan="2"/>
     </Grid>
 </Window>

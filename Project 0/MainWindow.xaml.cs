@@ -45,7 +45,7 @@ namespace Project_0
 
         public void SetTimer()
         {
-            fireTimer = new System.Timers.Timer(1000);
+            fireTimer = new System.Timers.Timer(500);
 
             fireTimer.Elapsed += OnTimedEvent;
             fireTimer.AutoReset = true;
@@ -109,6 +109,10 @@ namespace Project_0
                 {
                     this.RedFire1.Visibility = Visibility.Hidden;
                     this.RedFire2.Visibility = Visibility.Visible;
+
+                    this.LargeGlow1.Visibility = Visibility.Hidden;
+                    this.LargeGlow2.Visibility = Visibility.Visible;
+
                     fireNumber = false;
                 });
 
@@ -124,6 +128,10 @@ namespace Project_0
 
                     this.RedFire1.Visibility = Visibility.Visible;
                     this.RedFire2.Visibility = Visibility.Hidden;
+
+                    this.LargeGlow1.Visibility = Visibility.Visible;
+                    this.LargeGlow2.Visibility = Visibility.Hidden;
+
                     fireNumber = false;
 
                 }); 
@@ -138,6 +146,10 @@ namespace Project_0
 
                     this.YellowFire1.Visibility = Visibility.Hidden;
                     this.YellowFire2.Visibility = Visibility.Visible;
+
+                    this.SmallGlow1.Visibility = Visibility.Hidden;
+                    this.SmallGlow2.Visibility = Visibility.Visible;
+
                     fireNumber = true;
                     fireColor = false;
                 });
@@ -150,6 +162,10 @@ namespace Project_0
 
                     this.YellowFire1.Visibility = Visibility.Visible;
                     this.YellowFire2.Visibility = Visibility.Hidden;
+
+                    this.SmallGlow1.Visibility = Visibility.Visible;
+                    this.SmallGlow2.Visibility = Visibility.Hidden;
+
                     fireNumber = true;
                     fireColor = true;
 

@@ -105,5 +105,11 @@
   <ItemGroup>
     <Resource Include="spitroast.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RedFire2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="YellowFire2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
