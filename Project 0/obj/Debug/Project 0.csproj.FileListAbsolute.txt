@@ -58,3 +58,18 @@ D:\Documents\CPSC 581\1.1\CPSC-581-Project-0-master\Project 0\obj\Debug\Project 
 D:\Documents\CPSC 581\1.1\CPSC-581-Project-0-master\Project 0\obj\Debug\Project 0.csproj.CoreCompileInputs.cache
 D:\Documents\CPSC 581\1.1\CPSC-581-Project-0-master\Project 0\obj\Debug\Project 0.exe
 D:\Documents\CPSC 581\1.1\CPSC-581-Project-0-master\Project 0\obj\Debug\Project 0.pdb
+C:\Users\Fran\Desktop\HCI2\P0\CPSC-581-Project-0\Project 0\bin\Debug\Project 0.exe.config
+C:\Users\Fran\Desktop\HCI2\P0\CPSC-581-Project-0\Project 0\bin\Debug\Project 0.exe
+C:\Users\Fran\Desktop\HCI2\P0\CPSC-581-Project-0\Project 0\bin\Debug\Project 0.pdb
+C:\Users\Fran\Desktop\HCI2\P0\CPSC-581-Project-0\Project 0\obj\Debug\Project 0.csprojAssemblyReference.cache
+C:\Users\Fran\Desktop\HCI2\P0\CPSC-581-Project-0\Project 0\obj\Debug\MainWindow.g.cs
+C:\Users\Fran\Desktop\HCI2\P0\CPSC-581-Project-0\Project 0\obj\Debug\App.g.cs
+C:\Users\Fran\Desktop\HCI2\P0\CPSC-581-Project-0\Project 0\obj\Debug\Project 0_MarkupCompile.cache
+C:\Users\Fran\Desktop\HCI2\P0\CPSC-581-Project-0\Project 0\obj\Debug\Project 0_MarkupCompile.lref
+C:\Users\Fran\Desktop\HCI2\P0\CPSC-581-Project-0\Project 0\obj\Debug\MainWindow.baml
+C:\Users\Fran\Desktop\HCI2\P0\CPSC-581-Project-0\Project 0\obj\Debug\Project 0.g.resources
+C:\Users\Fran\Desktop\HCI2\P0\CPSC-581-Project-0\Project 0\obj\Debug\Project_0.Properties.Resources.resources
+C:\Users\Fran\Desktop\HCI2\P0\CPSC-581-Project-0\Project 0\obj\Debug\Project 0.csproj.GenerateResource.cache
+C:\Users\Fran\Desktop\HCI2\P0\CPSC-581-Project-0\Project 0\obj\Debug\Project 0.csproj.CoreCompileInputs.cache
+C:\Users\Fran\Desktop\HCI2\P0\CPSC-581-Project-0\Project 0\obj\Debug\Project 0.exe
+C:\Users\Fran\Desktop\HCI2\P0\CPSC-581-Project-0\Project 0\obj\Debug\Project 0.pdb
