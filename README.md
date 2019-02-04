@@ -1,5 +1,6 @@
 # CPSC-581-Project-0
 
+To Run: Download the zip and open the Microsoft Visual Studio Solution using Blend and start the program 
 To use: Click the screen to stop cooking the steak, once the steak has reached the tent, click the screen to get a new steak and try again
 
 The objective of the application is to cook a steak over a fire and then hear Jordan's reaction based on how well it is cooked
